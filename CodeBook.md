@@ -10,15 +10,16 @@
 
 The dataset contains 180 observations and the 68 variables listed below
 
-+ **subject** : Subject ID, integer, 30 levels, 1 to 30
++ **subject** : Subject ID, integer, 30 levels, from 1 to 30
 
 + **activity_name** : Activity name, string, 6 levels
-                1."walking"
-                2."walking_upstairs"
-                3."walking_downstairs"
-                4."sitting"           
-                5."standing"
-                6."laying"
+
+  1. "walking"
+  2. "walking_upstairs"
+  3. "walking_downstairs"
+  4. "sitting"           
+  5. "standing"
+  6. "laying"
 
 + **frequency_domain_signals_body_accelerometer_euclidean_norm_mean_value** : Average of the observations for this set of parameters, numeric                           
 + **frequency_domain_signals_body_accelerometer_euclidean_norm_standard_deviation** : Average of the observations for this set of parameters, numeric                   
