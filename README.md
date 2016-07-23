@@ -53,6 +53,7 @@ This project contains two scripts:
       5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
       
       For this task, I had to reshape the dataset using the package *tidyr* and the *gather* function in order to move all the variable columns to two key/value column named *variable/value*. The final aggregation is performed with the *tapply* function on the columns: *subject, activity_name, variable*
+      The final dataset is save in a file named *dataset.txt*.
       
 
 

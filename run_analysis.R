@@ -86,7 +86,7 @@ activity_name<-as.vector(read.table(paste(all_data_path,"y.txt",sep = "/"))[,1])
 activity_levels<-read.table(paste(data_path,"activity_labels.txt",sep = "/"))
 # Create factor variable and assign levels as descriptive activity names
 activity_name<-factor(activity_name)
-levels(activity_name)<-activity_levels$V2
+levels(activity_name)<-tolower(activity_levels$V2)
 # Add activity column to data set
 all_data<-cbind(activity_name,all_data)
 
@@ -107,11 +107,12 @@ coln<-gsub("Jerk"," jerk signals ",coln)
 coln<-gsub("Mag"," euclidean norm ",coln)
 coln<-gsub("-mean\\(\\)"," mean value ",coln)
 coln<-gsub("-std\\(\\)"," standard deviation ",coln)
-coln<-gsub("-X$"," X direction ",coln)
-coln<-gsub("-Y$"," Y direction ",coln)
-coln<-gsub("-Z$"," Z direction ",coln)
+coln<-gsub("-X$"," x direction ",coln)
+coln<-gsub("-Y$"," y direction ",coln)
+coln<-gsub("-Z$"," z direction ",coln)
 coln<-str_trim(coln)
 coln<-gsub(" +","_",coln)
+coln<-tolower(coln)
 # Rename the dataset columns now
 colnames(all_data)<-coln
 
