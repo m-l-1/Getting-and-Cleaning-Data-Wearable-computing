@@ -127,5 +127,6 @@ all_data %>% gather(variable,value,-subject,-activity_name) %>%
 # Summarize the value by subject/activity/variable
 group_by(subject,activity_name,variable) %>% 
 summarise(average=mean(value))
+grouped_data<-spread(grouped_data,variable,average)
 # Save the final dataset in the current working directory
-write.table(grouped_data,"dataset.txt",row.name=FALSE)
+write.table(grouped_data,"tidy_dataset.txt",row.name=FALSE)
