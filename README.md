@@ -22,17 +22,22 @@ This project contains two scripts:
       2. Extracts only the measurements on the mean and standard deviation for each measurement.
       
       First read the merged dataset *X.txt* and the list of features from *features.txt*.
-      Finish with *grep("mean\\(\\)|std\\(\\)",features)* and subsetting/col. renaming the dataset.
+      Then perform a grep on *mean() OR std()* as these will return variables needed to answer this question. Note that I choose not to include mean/std in the middle of variable name as I think there are not relevant. The code looks like this 
+      ```
+      grep("mean\\(\\)|std\\(\\)",features)
+      
+      ```
+      The last step is to subset and rename the dataset.
       
       3. Uses descriptive activity names to name the activities in the data set
       
       Read activity names file *activity_labels.txt* and activity data file *y.txt*.
       Convert data activity to factor then apply level with the activity names.
-      Finish with adding the new column to dataset.
+      Finish by adding the new factor column to the dataset.
       
       4. Appropriately labels the data set with descriptive variable names.
       
-      This is performed with using the function *gsub* and the following substitution
+      This is performed by using the function *gsub* and the following substitution
         
         ```
         coln<-gsub("^t"," time ",coln)
@@ -49,11 +54,19 @@ This project contains two scripts:
         coln<-gsub("-Y$"," y direction ",coln)
         coln<-gsub("-Z$"," z direction ",coln)
         ```
+        Note that a string trim and substitution of spaces by underscore is also done to produce tody variable names
       
       5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
       
-      For this task, I had to reshape the dataset using the package *tidyr* and the *gather* function in order to move all the variable columns to two key/value column named *variable/value*. The final aggregation is performed with the *summarize* function of the *dplayr* package. After spreading the *variable/value* columns back to columns variable, I get the my final tidy dataset.
-      The final dataset is saved in a file named *tidy_dataset.txt*.
+      For this task, I had to reshape the dataset using the function *gather* from package *tidyr* in order to move all the variable columns to two key/value column named *variable/value*. The final aggregation is performed with the *summarize* function of *dplayr* package. After spreading the *variable/value* columns back to columns variable, I get the my final tidy dataset.
+      The final dataset is saved in a file named *tidy_dataset.txt* and can be read with the following code
+      
+      ```
+      
+      read.table("tidy_dataset.txt",header=T)
+      
+      
+      ```
       
 
 
