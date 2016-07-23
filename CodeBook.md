@@ -2,93 +2,87 @@
 
 ## Human Activity Recognition Using Smartphones Data Set
 
-Download: Data Folder, Data Set Description
-
 ### Abstract: 
 #### Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
-### Data Set Characteristics:  
 
-Multivariate, Time-Series
+## The Dataset *dataset.txt*
 
-Number of Instances:
+The dataset contains 4 variables
 
-10299
-
-Area:
-
-Computer
-
-Attribute Characteristics:
-
-N/A
-
-Number of Attributes:
-
-561
-
-Date Donated
-
-2012-12-10
-
-Associated Tasks:
-
-Classification, Clustering
-
-Missing Values?
-
-N/A
-
-Number of Web Hits:
-
-305691
-
-
-### Source:
-
-Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
-1 - Smartlab - Non-Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy. 
-2 - CETpD - Technical Research Centre for Dependency Care and Autonomous Living
-Universitat Politècnica de Catalunya (BarcelonaTech). Vilanova i la Geltrú (08800), Spain
-activityrecognition '@' smartlab.ws
-
-
-### Data Set Information:
-
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
-
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
-
-Check the README.txt file for further details about this dataset. 
-
-A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen in the following link: [Web Link]
-
-An updated version of this dataset can be found at [Web Link]. It includes labels of postural transitions between activities and also the full raw inertial signals instead of the ones pre-processed into windows.
-
-
-### Attribute Information:
-
-For each record in the dataset it is provided: 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
-
-
-### Relevant Papers:
-
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012 
-
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra, Jorge L. Reyes-Ortiz. Energy Efficient Smartphone-Based Activity Recognition using Fixed-Point Arithmetic. Journal of Universal Computer Science. Special Issue in Ambient Assisted Living: Home Care. Volume 19, Issue 9. May 2013
-
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. 4th International Workshop of Ambient Assited Living, IWAAL 2012, Vitoria-Gasteiz, Spain, December 3-5, 2012. Proceedings. Lecture Notes in Computer Science 2012, pp 216-223. 
-
-Jorge Luis Reyes-Ortiz, Alessandro Ghio, Xavier Parra-Llanas, Davide Anguita, Joan Cabestany, Andreu Català. Human Activity and Motion Disorder Recognition: Towards Smarter Interactive Cognitive Environments. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
-
-
-
-### Citation Request:
-
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+        + subject : Subject ID, integer, 30 levels, 1 to 30
+        + activity_name : Activity name, string, 6 levels
+                1."walking"
+                2."walking_upstairs"
+                3."walking_downstairs"
+                4."sitting"           
+                5."standing"
+                6."laying" 
+        + variable : Measured variable name, string, 66 levels
+                [1] "frequency_domain_signals_body_accelerometer_euclidean_norm_mean_value"                          
+                [2] "frequency_domain_signals_body_accelerometer_euclidean_norm_standard_deviation"                  
+                [3] "frequency_domain_signals_body_accelerometer_jerk_signals_mean_value_x_direction"                
+                [4] "frequency_domain_signals_body_accelerometer_jerk_signals_mean_value_y_direction"                
+                [5] "frequency_domain_signals_body_accelerometer_jerk_signals_mean_value_z_direction"                
+                [6] "frequency_domain_signals_body_accelerometer_jerk_signals_standard_deviation_x_direction"        
+                [7] "frequency_domain_signals_body_accelerometer_jerk_signals_standard_deviation_y_direction"        
+                [8] "frequency_domain_signals_body_accelerometer_jerk_signals_standard_deviation_z_direction"        
+                [9] "frequency_domain_signals_body_accelerometer_mean_value_x_direction"                             
+                [10] "frequency_domain_signals_body_accelerometer_mean_value_y_direction"                             
+                [11] "frequency_domain_signals_body_accelerometer_mean_value_z_direction"                             
+                [12] "frequency_domain_signals_body_accelerometer_standard_deviation_x_direction"                     
+                [13] "frequency_domain_signals_body_accelerometer_standard_deviation_y_direction"                     
+                [14] "frequency_domain_signals_body_accelerometer_standard_deviation_z_direction"                     
+                [15] "frequency_domain_signals_body_body_accelerometer_jerk_signals_euclidean_norm_mean_value"        
+                [16] "frequency_domain_signals_body_body_accelerometer_jerk_signals_euclidean_norm_standard_deviation"
+                [17] "frequency_domain_signals_body_body_gyroscope_euclidean_norm_mean_value"                         
+                [18] "frequency_domain_signals_body_body_gyroscope_euclidean_norm_standard_deviation"                 
+                [19] "frequency_domain_signals_body_body_gyroscope_jerk_signals_euclidean_norm_mean_value"            
+                [20] "frequency_domain_signals_body_body_gyroscope_jerk_signals_euclidean_norm_standard_deviation"    
+                [21] "frequency_domain_signals_body_gyroscope_mean_value_x_direction"                                 
+                [22] "frequency_domain_signals_body_gyroscope_mean_value_y_direction"                                 
+                [23] "frequency_domain_signals_body_gyroscope_mean_value_z_direction"                                 
+                [24] "frequency_domain_signals_body_gyroscope_standard_deviation_x_direction"                         
+                [25] "frequency_domain_signals_body_gyroscope_standard_deviation_y_direction"                         
+                [26] "frequency_domain_signals_body_gyroscope_standard_deviation_z_direction"                         
+                [27] "time_body_accelerometer_euclidean_norm_mean_value"                                              
+                [28] "time_body_accelerometer_euclidean_norm_standard_deviation"                                      
+                [29] "time_body_accelerometer_jerk_signals_euclidean_norm_mean_value"                                 
+                [30] "time_body_accelerometer_jerk_signals_euclidean_norm_standard_deviation"                         
+                [31] "time_body_accelerometer_jerk_signals_mean_value_x_direction"                                    
+                [32] "time_body_accelerometer_jerk_signals_mean_value_y_direction"                                    
+                [33] "time_body_accelerometer_jerk_signals_mean_value_z_direction"                                    
+                [34] "time_body_accelerometer_jerk_signals_standard_deviation_x_direction"                            
+                [35] "time_body_accelerometer_jerk_signals_standard_deviation_y_direction"                            
+                [36] "time_body_accelerometer_jerk_signals_standard_deviation_z_direction"                            
+                [37] "time_body_accelerometer_mean_value_x_direction"                                                 
+                [38] "time_body_accelerometer_mean_value_y_direction"                                                 
+                [39] "time_body_accelerometer_mean_value_z_direction"                                                 
+                [40] "time_body_accelerometer_standard_deviation_x_direction"                                         
+                [41] "time_body_accelerometer_standard_deviation_y_direction"                                         
+                [42] "time_body_accelerometer_standard_deviation_z_direction"                                         
+                [43] "time_body_gyroscope_euclidean_norm_mean_value"                                                  
+                [44] "time_body_gyroscope_euclidean_norm_standard_deviation"                                          
+                [45] "time_body_gyroscope_jerk_signals_euclidean_norm_mean_value"                                     
+                [46] "time_body_gyroscope_jerk_signals_euclidean_norm_standard_deviation"                             
+                [47] "time_body_gyroscope_jerk_signals_mean_value_x_direction"                                        
+                [48] "time_body_gyroscope_jerk_signals_mean_value_y_direction"                                        
+                [49] "time_body_gyroscope_jerk_signals_mean_value_z_direction"                                        
+                [50] "time_body_gyroscope_jerk_signals_standard_deviation_x_direction"                                
+                [51] "time_body_gyroscope_jerk_signals_standard_deviation_y_direction"                                
+                [52] "time_body_gyroscope_jerk_signals_standard_deviation_z_direction"                                
+                [53] "time_body_gyroscope_mean_value_x_direction"                                                     
+                [54] "time_body_gyroscope_mean_value_y_direction"                                                     
+                [55] "time_body_gyroscope_mean_value_z_direction"                                                     
+                [56] "time_body_gyroscope_standard_deviation_x_direction"                                             
+                [57] "time_body_gyroscope_standard_deviation_y_direction"                                             
+                [58] "time_body_gyroscope_standard_deviation_z_direction"                                             
+                [59] "time_gravity_accelerometer_euclidean_norm_mean_value"                                           
+                [60] "time_gravity_accelerometer_euclidean_norm_standard_deviation"                                   
+                [61] "time_gravity_accelerometer_mean_value_x_direction"                                              
+                [62] "time_gravity_accelerometer_mean_value_y_direction"                                              
+                [63] "time_gravity_accelerometer_mean_value_z_direction"                                              
+                [64] "time_gravity_accelerometer_standard_deviation_x_direction"                                      
+                [65] "time_gravity_accelerometer_standard_deviation_y_direction"                                      
+                [66] "time_gravity_accelerometer_standard_deviation_z_direction"
+        + average : The mean of the observations grouped by subject, activity name and variable. 11880 numeric values
