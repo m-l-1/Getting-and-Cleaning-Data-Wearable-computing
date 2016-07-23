@@ -58,7 +58,7 @@ This project contains two scripts:
       
       5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
       
-      For this task, I had to reshape the dataset using the function *gather* from package *tidyr* in order to move all the variable columns to two key/value column named *variable/value*. The final aggregation is performed with the *summarize* function of *dplayr* package. After spreading the *variable/value* columns back to columns variable, I get the my final tidy dataset.
+      For this task, I had to reshape the dataset using the function *gather* from package *tidyr* in order to move all the variable columns to two key/value columns named *variable/value*. The final aggregation is performed with the *summarize* function of *dplayr* package. After spreading the *variable/value* columns back to columns variable, I get the final tidy dataset.
       The final dataset is saved in a file named *tidy_dataset.txt* and can be read with the following code
       
       ```
