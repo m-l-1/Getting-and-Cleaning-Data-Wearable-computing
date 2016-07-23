@@ -2,13 +2,13 @@
 
 ___
 
-## Human Activity Recognition Using Smartphones Data Set
+## Average summary of all (training and test) the Human Activity Recognition Using Smartphones Data Set
 
 ### Abstract: 
-#### Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
+Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
-## The Dataset *dataset.txt*
+### The Dataset *dataset.txt*
 
 The dataset contains 4 variables and 11880 observations
 
