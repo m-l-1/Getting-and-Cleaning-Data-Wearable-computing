@@ -1,8 +1,5 @@
-# Getting-and-Cleaning-Data-Wearable-computing
-
+# Getting and Cleaning Data assignment project
 ___
-
-## Getting and Cleaning Data assignment project
 
 This project contains two scripts:
 
