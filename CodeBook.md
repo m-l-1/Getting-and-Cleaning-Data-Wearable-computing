@@ -1,6 +1,6 @@
 # Code book that describes the variables, the data, and any transformations or work that I performed to clean up the data
 
-## Human Activity Recognition Using Smartphones Data Set
+## Average summary of Human Activity Recognition Using Smartphones Data Set
 
 ### Abstract: 
 #### Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
