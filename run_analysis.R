@@ -1,4 +1,4 @@
-# Cleaning the data
+# Cleaning and Reshaping the data
 
 ## This script perform the 5 operations requested for this analysis
 ## Author: MLCODER
@@ -7,7 +7,7 @@
 # path to Samsung data folder
 data_path<-"./data/UCI HAR Dataset"
 
-# 1. Merges the training and the test sets to create one data set.
+### 1. Merges the training and the test sets to create one data set.
 
 # Utility function to build custom file name
 get_file_path<-function(block=c(),   # Blocks that make up the file name
@@ -66,7 +66,7 @@ apply(change_files,2,function(column){
         }
 })
 
-# 2. Extracts only the measurements on the mean and standard deviation for each measurement.
+### 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 
 # Read merged dataset
 all_data<-read.table(paste(all_data_path,"X.txt",sep = "/"))
@@ -79,7 +79,7 @@ mean_std_idx<-grep("mean\\(\\)|std\\(\\)",features)
 all_data<-all_data[,mean_std_idx]
 colnames(all_data)<-features[mean_std_idx]
 
-# 3. Uses descriptive activity names to name the activities in the data set
+### 3. Uses descriptive activity names to name the activities in the data set
 
 # Read data labels and activity names
 activity_name<-as.vector(read.table(paste(all_data_path,"y.txt",sep = "/"))[,1])
@@ -90,7 +90,7 @@ levels(activity_name)<-activity_levels$V2
 # Add activity column to data set
 all_data<-cbind(activity_name,all_data)
 
-# 4. Appropriately labels the data set with descriptive variable names.
+### 4. Appropriately labels the data set with descriptive variable names.
 library("stringr")
 # Read and add subject column to data set
 subject<-as.factor(read.table(paste(all_data_path,"subject.txt",sep = "/"))[,1])
@@ -115,8 +115,8 @@ coln<-gsub(" +","_",coln)
 # Rename the dataset columns now
 colnames(all_data)<-coln
 
-# 5. From the data set in step 4, creates a second, independent tidy data set with the average of 
-#    each variable for each activity and each subject.
+### 5. From the data set in step 4, creates a second, independent tidy data set with the average of 
+###    each variable for each activity and each subject.
 
 library(tidyr)
 # Reshape the dataset
