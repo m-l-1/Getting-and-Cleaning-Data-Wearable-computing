@@ -1,2 +1,2 @@
-# Getting-and-Cleaning-Data-Wearable-computing
-Getting and Cleaning Data assignment project
+# Getting and Cleaning Data with Wearable computing
+## This is my Getting and Cleaning Data assignment project
