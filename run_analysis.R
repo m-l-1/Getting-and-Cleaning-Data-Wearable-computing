@@ -5,7 +5,7 @@
 
 
 # path to Samsung data folder
-data_path<-"./data/UCI HAR Dataset"
+data_path<-"./UCI HAR Dataset"
 
 ### 1. Merges the training and the test sets to create one data set.
 
