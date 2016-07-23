@@ -120,17 +120,12 @@ colnames(all_data)<-coln
 ###    each variable for each activity and each subject.
 
 library(tidyr)
+library(dplyr)
+grouped_data<-
 # Reshape the dataset
-grouped_data<-gather(all_data,variable,value,-subject,-activity_name)
-# Apply mean to values grouped by subject/activity/variable
-l<-list(grouped_data$subject,
-        grouped_data$activity_name,
-        grouped_data$variable)
-mean_grouped_data<-tapply(
-        grouped_data$value,
-        l,
-        mean)
-dim(mean_grouped_data)
-# => 3D matrix : 30 subjects / 6 activities / 66 variables
+all_data %>% gather(variable,value,-subject,-activity_name) %>% 
+# Summarize the value by subject/activity/variable
+group_by(subject,activity_name,variable) %>% 
+summarise(average=mean(value))
 # Save the final dataset in the current working directory
-write.table(mean_grouped_data,"dataset.txt",row.name=FALSE)
+write.table(grouped_data,"dataset.txt",row.name=FALSE)
